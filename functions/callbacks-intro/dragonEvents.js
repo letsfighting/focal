@@ -4,20 +4,26 @@ const dragonEvents = [
   { type: "eat", target: "horse" },
   { type: "attack", value: 23, target: "player-fluffykins" },
   { type: "attack", value: 12, target: "player-dorkman" },
+  { type: "attack", value: 12, target: "player-dorkman" },
+  { type: "attack", value: 12, target: "player-dorkman" },
+  { type: "attack", value: 12, target: "player-dorkman" },
+  { type: "attack", value: 12, target: "player-dorkman" },
+  { type: "attack", value: 12, target: "player-dorkman" },
+  { type: "attack", value: 12, target: "player-dorkman" },
 ];
 
 const totalDamageOnDorkman = dragonEvents
-  .filter(function (event) {
+  .filter((event) => {
     return event.type === "attack";
   })
-  .filter(function (event) {
+  .filter((event) => {
     return event.target === "player-dorkman";
   })
-  .map(function (event) {
+  .map((event) => {
     return event.value;
   })
-  .reduce(function (prev, value) {
-    return (prev || 0) + value;
+  .reduce((prev, value) => {
+    return prev + value;
   });
 
 console.log("totalDamageOnDorkman\n", totalDamageOnDorkman);
