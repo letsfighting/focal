@@ -13,17 +13,10 @@ const dragonEvents = [
 ];
 
 const totalDamageOnDorkman = dragonEvents
-  .filter((event) => {
-    return event.type === "attack";
-  })
-  .filter((event) => {
-    return event.target === "player-dorkman";
-  })
-  .map((event) => {
-    return event.value;
-  })
-  .reduce((prev, value) => {
-    return prev + value;
-  });
+  .filter(
+    (event) => event.type === "attack" && event.target === "player-dorkman"
+  )
+  .map((event) => event.value)
+  .reduce((prev, value) => prev + value);
 
 console.log("totalDamageOnDorkman\n", totalDamageOnDorkman);
